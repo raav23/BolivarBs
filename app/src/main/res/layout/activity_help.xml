@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/degradado3"
+    tools:context=".Help">
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:fadeScrollbars="true"
+        android:scrollbarSize="7dip"
+        android:scrollbarThumbVertical="@color/editTextColorBlanco"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/textView19"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="5dp"
+                android:text="Ayuda"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:textColor="@android:color/background_light"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srcCompat="@android:drawable/ic_dialog_info" />
+
+            <TextView
+                android:id="@+id/textView20"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="3dp"
+                android:paddingLeft="3dp"
+                android:paddingTop="1dp"
+                android:text="1. El juego es muy simple, primero elige en que sala quieres jugar, el sistema te conectara a ti con otras 3 personas. Por turnos lanzan los dados, el jugador que saque el menor número pierde el 50% de su dinero el cual es repartido entre los otros 3 jugadores ganadores. Cada partida dura aproximadamente dos minutos y consta de 4 rondas."
+                android:textAlignment="viewStart"
+                android:textAllCaps="false"
+                android:textColor="@android:color/background_light"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/textView23"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="5dp"
+                android:paddingLeft="3dp"
+                android:text="2. Si se da un EMPATE (dos jugadores sacan 1 por ejemplo) entonces nadie pierde dinero y continua el juego al siguiente turno. "
+                android:textColor="@android:color/darker_gray"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/textView25"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="5dp"
+                android:paddingLeft="3dp"
+                android:paddingTop="1dp"
+                android:text="3. Puedes retirar el dinero que ganes en cualquier momento (El  monto mínimo de retiro son 10 Bs)"
+                android:textAlignment="viewStart"
+                android:textAllCaps="false"
+                android:textColor="@android:color/background_light"
+                android:textSize="17sp" />
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="3dp"
+                app:srcCompat="@android:drawable/ic_dialog_alert" />
+
+            <TextView
+                android:id="@+id/textView17"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="3dp"
+                android:paddingLeft="3dp"
+                android:text="4. Cuando empiece el juego tienes 15 segundos para lanzar los dados, de lo contrario seras sacado por inactividad. "
+                android:textColor="@android:color/darker_gray"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/textView18"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="3dp"
+                android:paddingLeft="3dp"
+                android:text="5. Si un jugador es sacado por inactividad o si cierra la aplicación en pleno juego pierde el total del dinero que tenga en la sala, el cual es repartido entre los jugadores restantes. "
+                android:textAlignment="viewStart"
+                android:textColor="@android:color/background_light"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/textView21"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="5dp"
+                android:paddingLeft="3dp"
+                android:text="6. Por lo anterior te recomendamos jugar solo cuando tengas una conexion a internet rapida y constante"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="17sp" />
+
+            <Button
+                android:id="@+id/button_help"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/colorAccent"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="¿Necesitas ayuda? Llámanos"
+                android:textAlignment="center"
+                android:textColor="@android:color/background_light"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>

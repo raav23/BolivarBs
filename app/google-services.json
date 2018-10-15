@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1015702090282",
+    "firebase_url": "https://bolivarbs-64dc1.firebaseio.com",
+    "project_id": "bolivarbs-64dc1",
+    "storage_bucket": "bolivarbs-64dc1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1015702090282:android:9f2a7b0d3d47747c",
+        "android_client_info": {
+          "package_name": "appr.softectachira.com.bolivarbs"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1015702090282-6ucsh6qpg3fh56f6p6s8em6vnvjd625v.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "appr.softectachira.com.bolivarbs",
+            "certificate_hash": "729da84ee9716e6a573be0870521ba5de00ed3bc"
+          }
+        },
+        {
+          "client_id": "1015702090282-3l5dv1snfooj14fhl9sacnj3pmlu3sr9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCqrfmZxbSfXFjZt6P-jR-0CGRcpeJZWk0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1015702090282-3l5dv1snfooj14fhl9sacnj3pmlu3sr9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

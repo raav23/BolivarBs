@@ -1,0 +1,43 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+    </style>
+
+
+
+
+
+    <style name="RisedButtom" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorButtonNormal">@color/colorPrimaryDark</item>
+        <item name="colorControlHighlight">@color/colorAccent</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+
+
+
+    <style name="editTextBlanco" parent="TextAppearance.AppCompat">
+        <item name="android:textColorHint">@color/editTextColorBlanco</item>
+        <item name="android:textColorPrimary">@color/editTextColorBlanco</item>
+        <item name="colorAccent">@color/editTextColorBlanco</item>
+        <item name="colorControlNormal">@color/editTextColorBlanco</item>
+        <item name="colorControlActivated">@color/editTextColorBlanco</item>
+
+
+
+    </style>
+
+    <style name="Divider">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">2dp</item>
+        <item name="android:background">@color/editTextColorBlanco</item>
+    </style>
+
+
+</resources>
