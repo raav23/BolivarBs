@@ -60,7 +60,6 @@ public class MainActivity extends AppCompatActivity {
         progressBar=findViewById(R.id.progressBar_login);
 
 
-
         //Inicializando la instancia de FirebaseAuth
         mAuth = FirebaseAuth.getInstance();
 

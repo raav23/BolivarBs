@@ -73,6 +73,13 @@ public class RetirarFondos extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                Intent intent=new Intent(RetirarFondos.this,RetirarFondos_pagoMovil.class);
+                intent.putExtra("dinero_usuario",textView_dineroUsuario.getText().toString());
+                intent.putExtra("nombre_usuario",textView_nombreUsuario.getText().toString());
+                intent.putExtra("dineroDiferido",textView_dineroDiferido.getText().toString());
+                startActivity(intent);
+
+
             }
         });
     }

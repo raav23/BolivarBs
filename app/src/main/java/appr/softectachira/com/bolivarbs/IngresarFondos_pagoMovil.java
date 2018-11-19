@@ -74,9 +74,13 @@ public class IngresarFondos_pagoMovil extends AppCompatActivity {
         imageView=findViewById(R.id.imageView3);
         progressBar=findViewById(R.id.progressBar);
 
+
+       //Boton elegir recibo
         btnSubirRecibo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+
                 //cargarImagen();
                 Intent intent = new Intent();
                 intent.setType("image/*");
@@ -87,6 +91,8 @@ public class IngresarFondos_pagoMovil extends AppCompatActivity {
             }
         });
 
+
+        //Boton enviar recibo
         btnSENDemail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

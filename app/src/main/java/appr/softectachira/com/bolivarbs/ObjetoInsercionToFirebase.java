@@ -1,6 +1,5 @@
 package appr.softectachira.com.bolivarbs;
 
-import android.util.Log;
 
 /**
  * Created by CASA on 17/12/2017.

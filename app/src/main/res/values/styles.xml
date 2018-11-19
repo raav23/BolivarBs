@@ -19,6 +19,13 @@
         <item name="android:textColor">@android:color/white</item>
     </style>
 
+    <style name="RisedButtom2" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorButtonNormal">@color/gris</item>
+        <item name="colorControlHighlight">@color/grisOscuro</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+
 
 
 
@@ -33,11 +40,7 @@
 
     </style>
 
-    <style name="Divider">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">2dp</item>
-        <item name="android:background">@color/editTextColorBlanco</item>
-    </style>
+
 
 
 </resources>

@@ -263,6 +263,7 @@ public class FullScreen_Juego extends AppCompatActivity {
 
                     Random altr=new Random();
                     String numSacado=Integer.toString(altr.nextInt(13-1)+1);
+
                     //Enviamos al visorp1 el numero sacado
                     visorp1.setText(numSacado);
 
@@ -271,6 +272,10 @@ public class FullScreen_Juego extends AppCompatActivity {
 
                     //Enviamos al servicio el Numero Sacado
                     sendResult(numSacado);
+                    MyService.POPONUMBER=numSacado;
+                    Log.i("II/FullScreen_Juego>", " numSacado= "+numSacado);
+
+
 
                     //Ejecutamos un sonido
                     soundDados.start();
@@ -484,6 +489,10 @@ public class FullScreen_Juego extends AppCompatActivity {
                             break;
 
                         case "closed":
+
+                            if(contadorTurno<4){
+                                Toast.makeText(context, "Un jugador Abandono la Partida", Toast.LENGTH_SHORT).show();
+                            }
 
                             //Paramos la musica
                             soundDados.stop();
@@ -854,11 +863,11 @@ public class FullScreen_Juego extends AppCompatActivity {
                 String refresh = intent.getStringExtra(MyService.REFRESH_MONEY_PLAYER);
                 Log.i("II/FullScreen_Juego>", " receiver2 > REFRESH : "+refresh);
 
-
+            try {
 
                 //Si lo que recibimos es mayor que lo que habia entonces GANAMOS dinero
-                if(Float.parseFloat(refresh) > Float.parseFloat(visorMoneyP1.getText().toString())
-                        ){
+                if (Float.parseFloat(refresh) > Float.parseFloat(visorMoneyP1.getText().toString())
+                        ) {
                     //Ejecutamos sonido
                     soundGanamosDinero.start();
                     //Ejecutar animacion
@@ -909,7 +918,9 @@ public class FullScreen_Juego extends AppCompatActivity {
                 visorMoneyP1.setText(refresh);
 
 
-
+            }catch (Exception e){
+                Log.d("II/","Error: "+e);
+            }
 
             }
         };

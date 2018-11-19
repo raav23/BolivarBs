@@ -15,10 +15,10 @@
         android:id="@+id/imageButton100bs"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
         android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginBottom="8dp"
         android:adjustViewBounds="true"
         android:background="@null"
         android:contentDescription="Button 100"
@@ -35,10 +35,10 @@
         android:id="@+id/imageButton250bs"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
         android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginBottom="8dp"
         android:background="@null"
         android:contentDescription="TODO"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -102,13 +102,12 @@
         android:id="@+id/textView_nombreUsuario"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
         android:textColor="@color/editTextColorBlanco"
         android:textSize="24sp"
-        android:text="Federico"
         app:layout_constraintBottom_toTopOf="@+id/guideline12"
         app:layout_constraintEnd_toStartOf="@+id/guideline7"
         app:layout_constraintStart_toStartOf="parent"
@@ -118,9 +117,9 @@
         android:id="@+id/textView_dineroUsuario"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
         android:textAlignment="viewStart"
         android:textColor="@color/colorAccent"
         android:textSize="24sp"
@@ -218,6 +217,18 @@
         app:layout_constraintTop_toBottomOf="@+id/textView_esperandoJugadores"
         app:layout_constraintVertical_bias="0.0" />
 
+    <ImageView
+        android:id="@+id/imageView_tapaPantalla"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/guideline18"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:color/black" />
+
     <TextView
         android:id="@+id/textView_esperandoJugadores"
         android:layout_width="wrap_content"
@@ -234,18 +245,6 @@
         app:layout_constraintStart_toStartOf="@+id/progressBar_salas"
         app:layout_constraintTop_toTopOf="@+id/guideline18"
         app:layout_constraintVertical_bias="0.0" />
-
-    <ImageView
-        android:id="@+id/imageView_tapaPantalla"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="8dp"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toTopOf="@+id/guideline18"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:color/black" />
 
     <Button
         android:id="@+id/button_salas_cancelar"
@@ -269,8 +268,9 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
         android:visibility="invisible"
-        app:layout_constraintBottom_toTopOf="@+id/button_salas_cancelar"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView_tapaPantalla"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -318,5 +318,36 @@
         app:layout_constraintStart_toStartOf="@+id/guideline8"
         app:layout_constraintTop_toTopOf="@+id/guideline18"
         app:srcCompat="@android:drawable/ic_menu_help" />
+
+    <TextView
+        android:id="@+id/textView37"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="12dp"
+        android:text="-Bolivares Disponibles"
+        android:textColor="@color/colorAccent"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline7"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textView_dineroUsuario"
+        app:layout_constraintTop_toTopOf="@+id/guideline18" />
+
+    <TextView
+        android:id="@+id/textView38"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="-Bolivares por Comprobar"
+        android:textColor="@android:color/holo_orange_light"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline7"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textView37"
+        app:layout_constraintTop_toBottomOf="@+id/textView37"
+        app:layout_constraintVertical_bias="0.0" />
 
 </android.support.constraint.ConstraintLayout>

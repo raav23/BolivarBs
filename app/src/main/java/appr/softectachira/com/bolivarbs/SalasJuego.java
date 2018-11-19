@@ -8,6 +8,7 @@ import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.preference.PreferenceManager;
+import android.support.annotation.NonNull;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -43,7 +44,7 @@ public class SalasJuego extends AppCompatActivity {
     ImageButton btn1bs,btn5bs,btn7bs,btn15bs;
     Context context=this;
     private TextView textView_nombreUsuario,textView_dineroUsuario,textView_dineroDiferido,
-            textView_esperandoJugadores,textView_notasTapapantalla,textView_mas;
+            textView_esperandoJugadores,textView_notasTapapantalla,textView_mas,textView_37,textView_38;
     private ImageView imageView_retirarDinero,imageView_ingresarDinero,
             imageView_tapaPantalla,imageView_imagenTapaPantalla,imageView_help;
     private ProgressBar progressBar;
@@ -86,6 +87,8 @@ public class SalasJuego extends AppCompatActivity {
         textView_esperandoJugadores = findViewById(R.id.textView_esperandoJugadores);
         textView_notasTapapantalla = findViewById(R.id.textView_notasTapaPantalla);
         textView_mas=findViewById(R.id.textView28);
+        textView_37=findViewById(R.id.textView37);
+        textView_38=findViewById(R.id.textView38);
         imageView_retirarDinero = findViewById(R.id.imageView_retirarBs);
         imageView_ingresarDinero = findViewById(R.id.imageView_ingresarBs);
         imageView_tapaPantalla = findViewById(R.id.imageView_tapaPantalla);
@@ -135,18 +138,20 @@ public class SalasJuego extends AppCompatActivity {
         FirebaseUser user = mAuth.getCurrentUser();
 
 
+
         //Obteniendo la referencia de la base de datos (bolivarbs-64dc1)
        databaseReference = FirebaseDatabase.getInstance().getReference();
 
       //"Actualizador" de nombre y dinero del usuario y partidas jugadas
         databaseReference.child(user.getUid()).addValueEventListener(new ValueEventListener() {
+
             @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
                 String nam = dataSnapshot.child("nombre").getValue().toString();
                 String mon = dataSnapshot.child("money").getValue().toString();
                 PARTIDAS_JUGADAS = dataSnapshot.child("partidasJugadas").getValue().toString();
-                String diferido=dataSnapshot.child("money_pendiente").getValue().toString(); //String para usar en salasJuego??
-
+                String diferido = dataSnapshot.child("money_pendiente").getValue().toString(); //String para usar en salasJuego??
 
 
                 textView_nombreUsuario.setText(nam);
@@ -157,6 +162,8 @@ public class SalasJuego extends AppCompatActivity {
                 textView_dineroUsuario.startAnimation(aumento);
                 textView_dineroDiferido.startAnimation(aumento);
                 textView_mas.startAnimation(aumento);
+
+
 
 
             }
@@ -220,8 +227,11 @@ public class SalasJuego extends AppCompatActivity {
                     imageView_ingresarDinero.setClickable(false);
                     imageView_retirarDinero.setClickable(false);
                     imageView_help.setClickable(false);
-                    imageView_help.setVisibility(View.INVISIBLE);
 
+                    //Hacemos INVISIBLES elementos
+                    imageView_help.setVisibility(View.INVISIBLE);
+                    textView_37.setVisibility(View.INVISIBLE);
+                    textView_38.setVisibility(View.INVISIBLE);
 
                 } else {
                     Toast.makeText(getBaseContext(), "No tienes suficiente dinero", Toast.LENGTH_SHORT).show();
@@ -282,7 +292,12 @@ public class SalasJuego extends AppCompatActivity {
                     imageView_ingresarDinero.setClickable(false);
                     imageView_retirarDinero.setClickable(false);
                     imageView_help.setClickable(false);
+
+                    //Hacemos INVISIBLES elementos
                     imageView_help.setVisibility(View.INVISIBLE);
+                    textView_37.setVisibility(View.INVISIBLE);
+                    textView_38.setVisibility(View.INVISIBLE);
+
 
 
                 } else {
@@ -340,7 +355,12 @@ public class SalasJuego extends AppCompatActivity {
                     imageView_ingresarDinero.setClickable(false);
                     imageView_retirarDinero.setClickable(false);
                     imageView_help.setClickable(false);
+
+                    //Hacemos INVISIBLES elementos
                     imageView_help.setVisibility(View.INVISIBLE);
+                    textView_37.setVisibility(View.INVISIBLE);
+                    textView_38.setVisibility(View.INVISIBLE);
+
 
 
                 } else {
@@ -400,7 +420,12 @@ public class SalasJuego extends AppCompatActivity {
                     imageView_ingresarDinero.setClickable(false);
                     imageView_retirarDinero.setClickable(false);
                     imageView_help.setClickable(false);
+
+                    //Hacemos INVISIBLES elementos
                     imageView_help.setVisibility(View.INVISIBLE);
+                    textView_37.setVisibility(View.INVISIBLE);
+                    textView_38.setVisibility(View.INVISIBLE);
+
 
 
                 } else {
@@ -483,7 +508,12 @@ public class SalasJuego extends AppCompatActivity {
                 imageView_ingresarDinero.setClickable(true);
                 imageView_retirarDinero.setClickable(true);
                 imageView_help.setClickable(true);
+
+                //Volvemos Visibles los elementos
                 imageView_help.setVisibility(View.VISIBLE);
+                textView_37.setVisibility(View.VISIBLE);
+                textView_38.setVisibility(View.VISIBLE);
+
 
                 //cancelamos el servicio
                 Intent stopServicio = new Intent(getBaseContext(), MyService.class);
@@ -597,7 +627,6 @@ public class SalasJuego extends AppCompatActivity {
         textView_dineroDiferido.setText(moneyDif);
 
 
-        Log.i("II/Sala", "dinero en textview onResume:  ="+textView_dineroUsuario.getText().toString()  );
 
 
 

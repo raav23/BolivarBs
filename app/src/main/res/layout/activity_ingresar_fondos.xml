@@ -181,7 +181,7 @@
         android:layout_marginTop="8dp"
         android:text="MERCADOPAGO (10Bs) "
         android:textSize="12sp"
-        android:theme="@style/RisedButtom"
+        android:theme="@style/RisedButtom2"
         app:layout_constraintBottom_toTopOf="@+id/guideline14"
         app:layout_constraintEnd_toStartOf="@+id/guideline10"
         app:layout_constraintLeft_toLeftOf="parent"

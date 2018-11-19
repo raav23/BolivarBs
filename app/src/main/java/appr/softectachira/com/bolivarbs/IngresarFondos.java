@@ -103,7 +103,8 @@ public class IngresarFondos extends AppCompatActivity {
          button_mercadopago.setOnClickListener(new View.OnClickListener() {
              @Override
              public void onClick(View view) {
-
+                 Toast.makeText(IngresarFondos.this, "No Disponible Por Ahora", Toast.LENGTH_SHORT).show();
+          /*
                  AlertDialog.Builder builder = new AlertDialog.Builder(IngresarFondos.this);
 
                  builder.setCancelable(true);
@@ -130,7 +131,7 @@ public class IngresarFondos extends AppCompatActivity {
                  });
                  builder.show();
 
-
+        */
              }
          });
     }

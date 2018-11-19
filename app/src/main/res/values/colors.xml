@@ -5,4 +5,8 @@
     <color name="colorAccent">#078d07</color>
     <color name="editTextColorBlanco">#ffffff</color>
     <color name="colorTertiary">#000080</color>
+    <color name="gris">#9E9E9E</color>
+    <color name="grisOscuro"> #616161
+    </color>
+
 </resources>

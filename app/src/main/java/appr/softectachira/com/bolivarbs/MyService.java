@@ -16,6 +16,7 @@ import java.io.PrintStream;
 import java.net.InetAddress;
 import java.net.Socket;
 import java.net.UnknownHostException;
+import java.util.Random;
 
 
 /**
@@ -32,7 +33,8 @@ public class MyService extends Service {
                     clickDados=false;
 
 
-    private String  numSacado;
+
+    public  static String POPONUMBER;
 
 
 
@@ -81,10 +83,11 @@ public class MyService extends Service {
             public void onReceive(Context context, Intent intent) {
                 //Guardamos el contenido del Broadcast que recibimos desde   FullScreen_juego
                 String numeroAleatorio = intent.getStringExtra(FullScreen_Juego.NUMEROALEATORIO);
+                Log.i("II/MyService>", " intent.getStringEztra.NUMEROALEATORIO: "+intent.getStringExtra(FullScreen_Juego.NUMEROALEATORIO));
+
                 //Los dados fueron presionados
                 clickDados=true;
-                //Recibimos el numero
-                numSacado=numeroAleatorio;
+
 
 
             }
@@ -400,9 +403,8 @@ public class MyService extends Service {
                             if (clickDados) {
 
 
-
-                                outputToServer.print(numSacado);
-                                Log.i("II/Hilo>", "Enviamos al server: " + numSacado);
+                                outputToServer.print(POPONUMBER);
+                                Log.i("II/Hilo>", "Enviamos al server POPONUMBER: " + POPONUMBER);
                                 miTurno = false;
                                 clickDados = false;
                                 Log.i("II/Hilo>", "Termina nuestro turno");

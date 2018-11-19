@@ -23,6 +23,14 @@
           }
         },
         {
+          "client_id": "1015702090282-uejomaigfi9pr8udq92av51bq0pegfhi.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "appr.softectachira.com.bolivarbs",
+            "certificate_hash": "af62d9af8a261b60b9ff8d8aeee7945dae2848c9"
+          }
+        },
+        {
           "client_id": "1015702090282-3l5dv1snfooj14fhl9sacnj3pmlu3sr9.apps.googleusercontent.com",
           "client_type": 3
         }

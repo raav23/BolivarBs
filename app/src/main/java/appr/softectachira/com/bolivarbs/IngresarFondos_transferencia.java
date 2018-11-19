@@ -1,6 +1,7 @@
 package appr.softectachira.com.bolivarbs;
 
 
+import android.Manifest;
 import android.app.AlertDialog;
 import android.content.ClipData;
 import android.content.ClipboardManager;
@@ -9,12 +10,16 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Handler;
 import android.os.StrictMode;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -72,6 +77,7 @@ public class IngresarFondos_transferencia extends AppCompatActivity {
     Session session;
     String filename ;
     private static final int PICK_IMAGE = 1;
+    private final int  MY_PERMISSIONS_REQUEST_READ_EXTERNAL_STORAGE=11211;
     StringBuilder sb;
 
 
@@ -262,17 +268,10 @@ public class IngresarFondos_transferencia extends AppCompatActivity {
         btn_subirComprobante.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent();
-                intent.setType("image/*");
-                intent.setAction(Intent.ACTION_GET_CONTENT);
-                startActivityForResult(Intent.createChooser(intent, "Seleccione el capture"), PICK_IMAGE);
-
-                btn_enviarComprobante.setVisibility(View.INVISIBLE);
+                isReadStoragePermissionGranted();
 
 
-
-
-            }
+            }//FINAL ONCLIK
         });
 
 
@@ -510,11 +509,6 @@ public class IngresarFondos_transferencia extends AppCompatActivity {
     }
 
 
-
-
-
-
-
     public void copiarPortapapeles(String texto){
 
         myClipboard = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
@@ -539,6 +533,55 @@ public class IngresarFondos_transferencia extends AppCompatActivity {
         dialog.show();
     }
 
+
+    public  boolean isReadStoragePermissionGranted() {
+        if (Build.VERSION.SDK_INT >= 23) {
+            if (checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE)
+                    == PackageManager.PERMISSION_GRANTED) {
+
+                Intent intent = new Intent();
+                intent.setType("image/*");
+                intent.setAction(Intent.ACTION_GET_CONTENT);
+                startActivityForResult(Intent.createChooser(intent, "Seleccione el capture"), PICK_IMAGE);
+                btn_enviarComprobante.setVisibility(View.INVISIBLE);
+
+                return true;
+            } else {
+
+                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, 3);
+                return false;
+            }
+        }
+        else { //permission is automatically granted on sdk<23 upon installation
+            Log.v("KO","Permission is granted1");
+            Intent intent = new Intent();
+            intent.setType("image/*");
+            intent.setAction(Intent.ACTION_GET_CONTENT);
+            startActivityForResult(Intent.createChooser(intent, "Seleccione el capture"), PICK_IMAGE);
+            btn_enviarComprobante.setVisibility(View.INVISIBLE);
+            return true;
+        }
+    }
+
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        switch (requestCode) {
+
+            case 2:
+                Log.d("II/", "External storage2");
+                if(grantResults[0]== PackageManager.PERMISSION_GRANTED){
+                    Log.v("II/","Permission: "+permissions[0]+ "was "+grantResults[0]);
+                    //resume tasks needing this permission
+                    //downloadPdfFile();
+                }else{
+
+                }
+                break;
+
+        }
+    }
 
 
 
